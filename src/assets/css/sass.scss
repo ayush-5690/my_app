@@ -1,0 +1,14 @@
+$primary_color:green;
+
+.main{
+    background-color: red;
+    .h1{
+        color: blue;
+    }
+    &.pera1{
+        border: 5px solid cyan;
+    }
+    p{
+        background-color: $primary_color;
+    }
+}

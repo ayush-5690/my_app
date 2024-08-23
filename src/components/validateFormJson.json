@@ -1,0 +1,117 @@
+[
+    {
+        "name":"name",
+        "conditions":[
+            {
+                "condition":"obj.name === undefined || obj.name === ''",
+                "error":"Name is Required"
+            },
+            {
+                "condition":"!/^[A-Za-z]+$/.test(obj.name)",
+                "error":"Name contains only alphabet"
+            }
+        ]
+    },
+    {
+        "name":"email",
+        "conditions":[
+            {
+                "condition":"obj.email === undefined || obj.email === ''",
+                "error":"Email is Required"
+            },
+            {
+                "condition":"!(obj.email?.includes('@gmail.com') ||obj.email?.includes('@mailinator.com'))",
+                "error":"Email is invalid"
+            }
+        ]
+    },
+    {
+        "name":"password",
+        "conditions":[
+            {
+                "condition":"obj.password === undefined || obj.password === ''",
+                "error":"Password is Required"
+            },
+            
+            {
+                "condition":"obj.password === obj.confirmpassword",
+                "error":"",
+                "otherfield":"confirmpassword"
+            }
+        ]
+    },
+    {
+        "name":"confirmpassword",
+        "conditions":[
+            {
+                "condition":"obj.confirmpassword === undefined || obj.confirmpassword === ''",
+                "error":"confirmpassword is Required"
+            },
+            {
+                "condition":"obj.password !== obj.confirmpassword",
+                "error":"Password is not matched"
+            }
+        ]
+    },
+    {
+        "name":"number",
+        "conditions":[
+            {
+                "condition":"obj.number === undefined || obj.number === ''",
+                "error":"Phone number is Required"
+            },
+            {
+                "condition":"obj.number.length !== 10",
+                "error":"Phone number is not valid"
+            },
+            {
+                "condition":"/^[A-Za-z]+$/.test(obj.number)",
+                "error":"Phone number is not valid"
+            }
+        ]
+    },
+    {
+        "name":"date",
+        "conditions":[
+            {
+                "condition":"obj.date === undefined || obj.date === ''",
+                "error":"date is Required"
+            },
+            {
+                "condition":"new Date(obj.date) >= new Date(above18)",
+                "error":"Date must be 18 +"
+            }
+        ]
+    },
+    {
+        "name":"hobbies",
+        "conditions":[
+            {
+                "condition":"obj.hobbies.length === 0",
+                "error":"Hobbies is Required"
+            },
+            {
+                "condition":"obj.hobbies.length < 3",
+                "error":"Minimum 3 hobbies is required"
+            }
+        ]
+    },
+    {
+        "name":"gender",
+        "conditions":[
+            {
+                "condition":"obj.gender === undefined || obj.gender === ''",
+                "error":"gender is Required"
+            }
+        ]
+    },
+    {
+        "name":"profile",
+        "conditions":[
+            {
+                "condition":"obj.profile === undefined || obj.profile === ''",
+                "error":"profile is Required"
+            }
+        ]
+    }
+]
