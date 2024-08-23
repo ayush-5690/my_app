@@ -6,7 +6,12 @@ function ApiCrud() {
   const [obj, setObj] = useState({hobbies:[]});
   useEffect(() => {
    getApi()
-  }, []);
+  }, []);   
+
+
+
+
+  
 
   const getApi =()=>{
     axios
